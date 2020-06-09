@@ -3,7 +3,7 @@ pipeline {
 	stages {
       stage('Git Checkout') {
          steps {            
-            git 'https://github.com/salagarsprabu/Inglibrary.git'
+            git 'https://github.com/singhmohini/Inglibrary.git'
 		}
 	}
 	stage('Build Analysis') {
