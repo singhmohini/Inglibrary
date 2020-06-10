@@ -20,4 +20,10 @@ pipeline {
               }
             }
           }
-	}}
+	stage ('Deploy') {
+		steps {
+			sh '/opt/maven/bin/mvn clean deploy -Dmaven.test.skip=true'
+		}
+	}
+	}
+}
