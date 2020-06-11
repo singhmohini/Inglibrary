@@ -25,5 +25,10 @@ pipeline {
 			sh '/opt/maven/bin/mvn clean deploy -Dmaven.test.skip=true'
 		}
 	}
+		stage ('Release') {
+		steps {
+		       sh 'export JENKINS_NODE_COOKIE=dontKillMe ;nohup java -Dspring.profiles.active=dev -jar $WORKSPACE/target/*.jar &'
+		}
 	}
+}
 }
